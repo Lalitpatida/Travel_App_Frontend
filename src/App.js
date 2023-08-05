@@ -1,8 +1,9 @@
 import './App.css';
+import { Home } from './pages';
 
 function App() {
   return (
-    <h1>jay shree Ram</h1>
+    <Home/>
   );
 }
 
