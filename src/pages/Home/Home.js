@@ -3,8 +3,8 @@ import { Fragment ,useEffect,useState } from "react";
 
 import axios from "axios";
 import InfiniteScroll from "react-infinite-scroll-component";
-import { Navbar,HotelCard,Categories } from "../../components";
-import { useCategory } from "../../context";
+import { Navbar,HotelCard,Categories ,SearchStayWithDate } from "../../components";
+import { useCategory ,useDate } from "../../context";
 
 import "./Home.css";
 
@@ -17,6 +17,7 @@ export const Home =()=>{
     const [testData,setTestData]=useState([]);
     const [hotels,setHotels]=useState([]);
     const {hotelCategory}=useCategory();
+    const {isSearchModalOpen}=useDate();
 
     useEffect(()=>{
         (async ()=>{
@@ -47,7 +48,7 @@ setTimeout(()=>{
 };
 
     return (
-        <Fragment>
+        <div className="relative">
         <Navbar/>
         <Categories/>
         
@@ -71,6 +72,9 @@ setTimeout(()=>{
                     </InfiniteScroll>
                  ):(<></>)
                 }
-        </Fragment>
+                {
+                   isSearchModalOpen && <SearchStayWithDate/>
+                }
+        </div>
     );
 };
