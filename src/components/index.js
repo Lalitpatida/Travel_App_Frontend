@@ -6,3 +6,6 @@ export {HotelDetails} from "./HotelDetails/HotelDetails";
 export {FinalPrice} from "./FinalPrice/FinalPrice";
 export {DateSelector} from "./DateSelector/DateSelector";
 export {SearchStayWithDate} from "./SearchStayWithDate/SearchStayWithDate";
+export {AuthLogin} from "./Auth/AuthLogin";
+export {AuthSignUp} from "./Auth/AuthSignUp";
+export {AuthModal} from "./AuthModal/AuthModal";
